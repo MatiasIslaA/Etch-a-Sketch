@@ -1,49 +1,130 @@
 const container = document.querySelector(".container");
-let btn = document.createElement("BUTTON");
-btn.innerHTML = "CLICK ME"; 
-btn.className = "btn";
+const section = document.querySelector(".section");
+let sizeOfCanvas;
+let btnHarvey = document.querySelector("#Harvey");
+let btnCaroline = document.querySelector("#Caroline");
+let btnVincent = document.querySelector("#Vincent");
+let btnAlex = document.querySelector("#Alex");
+let btnLeah = document.querySelector("#Leah");
+let btnSebastian = document.querySelector("#Sebastian");
+let btnPenny = document.querySelector("#Penny");
+let btnClean = document.querySelector(".btnClean");
 
-document.body.appendChild(btn);  
-let gridItem;
-for (i=0; i < 256; i++) {
-    gridItem = document.createElement("div");
-    gridItem.className = "grid-item";
-    gridItem.textContent = ".";
-    gridItem.style.color = "white";
-    container.appendChild(gridItem);
-    gridItem.style.border = "solid 1px black";
-    gridItem.style.pointer = "default";
-    gridItem.style["user-select"] = "none";
+let btnCanvas = document.querySelector(".btnCanvas");
+
+
+function gridItems(col, rows) {
+    for(i = 0; i < (col * rows); i ++){
+        const gridItem = document.createElement("div");
+        container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        container.appendChild(gridItem).classList.add("box");
+    }
 }
+
+gridItems(64, 64)
+
+
+
+
 container.style.display = "grid";
-// container.style["place-items"] = "center";
-container.style.width = "330px";
-container.style.height = "330px";
-container.style["grip-gap"] = "0px";
-container.style.border = "solid 1px black";
+container.style.width = "500px";
+container.style.height = "500px";
+container.style["z-index"] = "100";
 
+let x;
 
-
-container.style["grid-template-columns"] = "repeat(16, 1fr)";
-container.style["grid-template-rows"] = "repeat(16, 1fr)";
-
-let eachGrid = document.querySelectorAll(".grid-item")
-
-for (i = 0; i < eachGrid.length; i++) {
-    eachGrid[i].addEventListener("mouseover", function(e) {
-        e.target.style["background-color"] = "pink";
-        e.target.style.color = "pink";
-    })
-
+let eachGrid = document.querySelectorAll(".box")
+let griditems = document.querySelector(".box")
+let drawBlack = function(i) {
+    x = document.getElementById("newcolor").value;
+    if(x == null) {
+        i.target.style["background-color"] = "black";
+    } else if(x) {
+        i.target.style["background-color"] = x;
+    }
 }
-document.querySelector(".btn").onclick = function(){
+
+function drawDefault () {
+    for (i= 0; i < eachGrid.length; i++) {
+        eachGrid[i].addEventListener("mouseover", drawBlack)
+    }}
+function control(e) {
+    if (e.keyCode === 38) {
+        for (i= 0; i < eachGrid.length; i++) {
+            eachGrid[i].addEventListener("mouseover", drawBlack)
+        }
+    } else if(e.keyCode === 37) {
+        for (i= 0; i < eachGrid.length; i++) {
+            eachGrid[i].removeEventListener("mouseover", drawBlack)
+        }
+    }
+}
+
+
+
+document.addEventListener("keydown", control)   
+
+
+
+document.querySelector(".btnClean").onclick = function(){
     for (i = 0; i < eachGrid.length; i++) {
-        eachGrid[i].style["background-color"] = "white"
+        eachGrid[i].style["background-color"] = "transparent";
 }};
 
 
-// container.style[grid-column-gap] = "50px";
+
+document.querySelector(".btn-white-board").onclick = function(){
+    container.style.removeProperty("background-image");
+};
 
 
+document.querySelector(".btnCanvas").onclick = function(){
 
+    sizeOfCanvas = prompt();
+    gridItems(sizeOfCanvas, sizeOfCanvas);
+};
+
+
+btnHarvey.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Harvey.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })
+
+btnCaroline.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Caroline.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })
+
+btnVincent.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Vincent.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })  
+
+btnAlex.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Alex.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })  
+
+btnLeah.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Leah.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })  
+
+btnSebastian.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Sebastian.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })  
+
+btnPenny.addEventListener("click", () => {
+        container.style["background-image"] = "url('images/Penny.png')";
+        container.style["background-repeat"] = "no-repeat";
+        container.style["background-size"] = "cover";
+    })  
 

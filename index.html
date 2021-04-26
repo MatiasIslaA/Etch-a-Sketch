@@ -4,16 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        </style>
+    <script src="https://kit.fontawesome.com/959f24c154.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-
+<div class="bg">
+<div class="flex-container">
+    <div class="character-container">
+        <div class="header"><h1>Choose your character!</h1></div>
+        <div class="characters">
+            <div class="character">
+                <img src="images/Harvey.png" alt="Harvey">
+                <h2>Harvey</h2>
+                <button id="Harvey">Select</button>
+            </div>
+            <div class="character">
+                <img src="images/Caroline.png" alt="Caroline">
+                <h2>Caroline</h2>
+                <button id="Caroline">Select</button>
+            </div>
+            <div class="character">
+                <img src="images/Vincent.png" alt="Vincent">
+                <h2>Vincent</h2>
+                <button id="Vincent">Select</button>
+            </div>
+            <div class="character">
+                <img src="images/Alex.png" alt="Alex">
+                <h2>Alex</h2>
+                <button id="Alex">Select</button>
+            </div>
+            <div class="character">
+                <img src="images/Leah.png" alt="Leah">
+                <h2>Leah</h2>
+                <button id="Leah">Select</button>
+            </div>
+            <div class="character">
+                <img src="images/Sebastian.png" alt="Sebastian">
+                <h2>Sebastian</h2>
+                <button id="Sebastian">Select</button>
+            </div>
+            <div class="character">
+                <img src="images/Penny.png" alt="Penny">
+                <h2>Penny</h2>
+                <button id="Penny">Select</button>
+            </div>
+            <div class= "white-board">
+                <button class="btn-white-board">Without background</button></div>
+        </div>
     </div>
+    <div class="section">
+        <div class="instructions">
+            <h3>Press <i class="fas fa-arrow-up"></i> to start drawing</h3>
+            <h3>and <i class="fas fa-arrow-left"></i> to stop</h3>
+        </div>
 
+        <div class="container">
+        </div>
+        <div class="options">
+            <input type="color" id="newcolor">Change the color</input>         
+            <button class="btnClean">Erase all</button>
+            <button class="btnCanvas">Resize canvas</button>
 
-
+        </div>
+    </div>
+</div>
+</div> 
+<footer class="footer">
+    <div class="footer-text">Check the code  <a href="d">here</a>. Made possible thanks to <a href="https://www.stardewvalley.net/">Eric Barone's</a> characters and art.</div>
+</footer>
 <script src="etch-a-sketch.js"></script>
 
 </body>
