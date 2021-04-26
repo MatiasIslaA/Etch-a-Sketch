@@ -29,7 +29,7 @@ gridItems(64, 64)
 
 container.style.display = "grid";
 container.style.width = "500px";
-container.style.height = "500px";
+container.style.height = "450px";
 container.style["z-index"] = "100";
 
 let x;
