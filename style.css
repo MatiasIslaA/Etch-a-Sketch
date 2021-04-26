@@ -5,7 +5,7 @@
     font-size: 13.3333px;
     color: #942300;
 }
-body, html {
+body {
     height: 100%;
     background-image: url("images/background.png");
     background-size: cover;
@@ -56,8 +56,8 @@ input{
 .character-container {
     width: 25%;
     margin: 5px;
+    height: 90vh;
     margin-left: 15%;
-    padding-bottom: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, 
